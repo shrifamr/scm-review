@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b665f">
+  <meta name="description" content="موقع مراجعة تفاعلي لمادة Supply Chain Management، يضم شرح المحاضرات وبنك الأسئلة كما وردا في الملفات المرفوعة.">
+  <title>مراجعة SCM | Supply Chain Management</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">تخطَّ إلى المحتوى</a>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">SCM</div>
+      <div>
+        <p class="eyebrow">مراجعة قبل الامتحان</p>
+        <h1>Supply Chain Management</h1>
+      </div>
+    </div>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="تفعيل الوضع الليلي" aria-pressed="false">
+      <span aria-hidden="true" id="themeIcon">☾</span><span class="theme-label">الوضع الليلي</span>
+    </button>
+  </header>
+
+  <nav class="main-nav" aria-label="التنقل الرئيسي">
+    <button type="button" class="nav-button is-current" data-view="dashboard" aria-current="page">الرئيسية</button>
+    <button type="button" class="nav-button" data-view="lessons">الشرح</button>
+    <button type="button" class="nav-button" data-view="study">مذاكرة</button>
+    <button type="button" class="nav-button" data-view="quiz">اختبار</button>
+    <button type="button" class="nav-button" data-view="library">بنك الأسئلة</button>
+  </nav>
+
+  <main id="mainContent" class="page-shell">
+    <section class="view-panel is-visible" id="view-dashboard" data-view-panel="dashboard" aria-labelledby="dashboardTitle">
+      <div class="page-heading">
+        <div><p class="eyebrow">خطة المراجعة</p><h2 id="dashboardTitle">أهلاً بك في مراجعة SCM</h2>
+          <p class="muted">ذاكر الشرح، تدرب على الأسئلة، أو ابدأ اختبارًا بوقت اختياري. تقدمك محفوظ على هذا المتصفح.</p></div>
+      </div>
+      <div id="dashboardRoot" class="stack"></div>
+    </section>
+
+    <section class="view-panel" id="view-lessons" data-view-panel="lessons" aria-labelledby="lessonsTitle" hidden>
+      <div class="page-heading"><div><p class="eyebrow">المحتوى الأصلي</p><h2 id="lessonsTitle">شرح المحاضرات</h2>
+        <p class="muted">المحتوى التالي من ملف الشرح البصري المرفوع، مع تنقل بين المحاضرات.</p></div></div>
+      <div class="lesson-tabs" role="tablist" aria-label="اختيار المحاضرة">
+        <button type="button" role="tab" id="tab-l1" aria-controls="l1" aria-selected="true" data-lesson-select="l1">محاضرة 1</button>
+        <button type="button" role="tab" id="tab-l2" aria-controls="l2" aria-selected="false" data-lesson-select="l2">محاضرة 2</button>
+        <button type="button" role="tab" id="tab-l3" aria-controls="l3" aria-selected="false" data-lesson-select="l3">محاضرة 3</button>
+        <button type="button" role="tab" id="tab-l6" aria-controls="l6" aria-selected="false" data-lesson-select="l6">محاضرة 6 · Barcode</button>
+      </div>
+      <div class="lesson-content" id="lessonContent">
+<section id="l1" class="lesson-page" role="tabpanel" aria-labelledby="tab-l1">
+<h2>ما هي الـ Supply Chain؟</h2>
+<div class="card">نظام من <span class="en">organizations, people, technology, activities, information, resources</span> بيحرّك المنتج من المورد للعميل النهائي. مثال المحاضرة: <b>الموبايل</b>.</div>
+<h3>سلسلة الموبايل (احفظ الترتيب)</h3>
+<div class="flow"><span class="n">1 Raw Materials</span><span class="a">→</span><span class="n">2 Components</span><span class="a">→</span><span class="n">3 Manufacturing</span><span class="a">→</span><span class="n">4 Warehouse</span><span class="a">→</span><span class="n">5 Distribution</span><span class="a">→</span><span class="n">6 Retail</span><span class="a">→</span><span class="n">7 Customer</span></div>
+<div class="grid">
+<div class="col"><b>Raw Materials</b><ul><li>Metals, glass, plastics</li><li>Minerals (lithium)</li></ul></div>
+<div class="col b"><b>Components</b><ul><li>Battery, camera</li><li>Chips, electronic components</li></ul></div>
+<div class="col c"><b>Factory</b><ul><li>Assembles</li><li>Tests</li></ul></div>
+</div>
+<div class="key"><b>مهم:</b> بعد التصنيع الموبايل يروح <span class="en">Warehouses</span> أولاً.</div>
+<h3>لو حلقة وقعت؟</h3>
+<div class="flow"><span class="n">Raw ✓</span><span class="a">→</span><span class="n hot">Components ✗ (chip shortage)</span><span class="a">→</span><span class="n">Production slows</span><span class="a">→</span><span class="n">Fewer phones</span><span class="a">→</span><span class="n">Shelves empty</span><span class="a">→</span><span class="n">Higher prices</span></div>
+<div class="card">كل اللي بعد الحلقة المكسورة بيتأثر. مثال حقيقي: نقص أشباه الموصلات 2020–2021. وأثناء COVID-19 انخفضت التجارة العالمية 5.3% وفقدت الدنيا 114 مليون وظيفة.</div>
+</section>
+<section id="l2" class="lesson-page" role="tabpanel" aria-labelledby="tab-l2" hidden>
+<h2>الأجزاء الثلاثة وتعريف SCM</h2>
+<div class="grid">
+<div class="col"><b>1 Supply</b><small>المواد الخام</small><ul><li>What material do we need?</li><li>From which supplier?</li><li>Where is the supplier?</li><li>When do we receive it?</li></ul></div>
+<div class="col c"><b>2 Manufacturing</b><small>تحويل لمنتج نهائي</small><ul><li>Components + battery + screen + body → Phone</li></ul></div>
+<div class="col b"><b>3 Distribution</b><small>وصول المنتج للعميل</small><ul><li>Factory → Warehouse → Distributor → Retailer → Customer</li></ul></div>
+</div>
+<div class="trap"><b>فخ:</b> الـ Advertising ليس من الأجزاء الثلاثة.</div>
+<div class="card"><b>SCM</b> = إدارة وتنسيق <span class="en">materials + information + money</span> من الموردين للعملاء.<br>
+الفكرة الأساسية: <span class="en">right product, right time, right place, right cost</span> (وكمان right quantity).<br>
+الهدف الرئيسي: <b class="en">Customer Satisfaction</b>.</div>
+<h3>أنشطة SCM</h3>
+<div class="flow"><span class="n">Sourcing & Procurement</span><span class="n">Manufacturing</span><span class="n">Logistics</span><span class="n">Transportation</span><span class="n">Warehousing</span><span class="n">Inventory Mgmt</span><span class="n">Collaboration</span><span class="n">Customer Service</span></div>
+<h3>التدفقات الثلاثة</h3>
+<div class="card">
+<b class="en">Product flow</b> (بضاعة)
+<div class="flow"><span class="n">Supplier</span><span class="a">→</span><span class="n">Factory</span><span class="a">→</span><span class="n">Warehouse</span><span class="a">→</span><span class="n">Customer</span></div>
+<b class="en">Information flow</b> (طلبات العملاء، توقعات الطلب Demand forecasts، مستويات المخزون، معلومات التسليم) ← الاتجاهين
+<div class="flow" style="margin-top:12px"></div>
+<b class="en">Financial flow</b> (فلوس، عكس الاتجاه)
+<div class="flow"><span class="n">Customer</span><span class="a">→</span><span class="n">Retailer</span><span class="a">→</span><span class="n">Distributor</span><span class="a">→</span><span class="n">Manufacturer</span><span class="a">→</span><span class="n">Supplier</span></div>
+</div>
+<div class="key"><b>مثال المعلومات:</b> السوبرماركت يحتاج 1,000 زجاجة مياه ← يبعت الأوردر للـ Distributor ← يكلّم الـ Supplier. لو المعلومة ماوصلتش: المورد يورّد أقل، المخزون يخلص، العميل ما يلاقيش المنتج. <span class="en">Good information = better performance.</span></div>
+<h3>ليه نحتاج SCM؟</h3>
+<div class="grid">
+<div class="col"><b>العميل عايز</b><ul><li>Better quality</li><li>Lower prices</li><li>Faster delivery</li><li>Flexibility, availability</li></ul></div>
+<div class="col b"><b>الشركة عايزة</b><ul><li>Reduce costs & inventory</li><li>Improve quality</li><li>Respond quickly</li><li>Improve coordination</li></ul></div>
+</div>
+<h3>مستويات القرار</h3>
+<div class="flow"><span class="n">Strategic (Design)</span><span class="a">→</span><span class="n">Tactical (Planning)</span><span class="a">→</span><span class="n">Operational (Operation)</span></div>
+<div class="scroll"><table><tr><th>Level</th><th>Time</th><th>Examples</th></tr>
+<tr><td>Strategic</td><td>Long term</td><td>Where to build the factory, its size, which suppliers, make or buy, warehouse locations</td></tr>
+<tr><td>Tactical</td><td>Medium (weeks/months)</td><td>Purchasing strategy, inventory policy, transport method, monthly production</td></tr>
+<tr><td>Operational</td><td>Daily</td><td>What to produce today, which order first, which truck, when to reorder</td></tr></table></div>
+<div class="trap"><b>فخ:</b> "Which truck?" و"when to reorder" = Operational. "Where to build a factory" = Strategic.</div>
+</section>
+<section id="l3" class="lesson-page" role="tabpanel" aria-labelledby="tab-l3" hidden>
+<h2>Distribution</h2>
+<div class="card"><b>Distribution</b> = حركة وتخزين المنتجات من الإنتاج للعميل. بتأثر على ثلاثة: <span class="en">Cost, Delivery speed, Customer satisfaction</span>.</div>
+<h3>القنوات الثلاث</h3>
+<div class="grid">
+<div class="col"><b class="en">Factory → Customer</b><small>مصنع أسمنت ← مشروع بناء كبير</small></div>
+<div class="col b"><b class="en">Factory → Distributor → Customer</b><small>شركة دهانات ← موزعين محليين</small></div>
+<div class="col c"><b class="en">Factory → Warehouse → Customer</b><small>شركة أدوية ← مخازن إقليمية ← صيدليات</small></div>
+</div>
+<h3>Network design</h3>
+<div class="card">قرارات: عدد المصانع والمخازن، أماكنها، المخزون في كل موقع، أي عملاء يخدمهم كل مرفق، طرق النقل.<br><b>الهدف:</b> <span class="en">meet demand at the lowest reasonable total cost while keeping acceptable customer service</span>.</div>
+<h3>أربع تكاليف</h3>
+<div class="scroll"><table><tr><th>Cost</th><th>Meaning</th><th>Example</th></tr>
+<tr><td>Inventory</td><td>Storing materials and products</td><td>Bags of cement, packaged medicines</td></tr>
+<tr><td>Transportation</td><td>Moving products</td><td>Delivering cement to sites</td></tr>
+<tr><td>Facility & handling</td><td>Operating warehouses, handling goods</td><td>Loading paint containers</td></tr>
+<tr><td>Information</td><td>Systems that manage SC activities</td><td>Inventory software, order tracking</td></tr></table></div>
+<h3>حالة المياه المعبأة (صيف = طلب أعلى)</h3>
+<div class="grid">
+<div class="col"><b>مخزن مركزي واحد</b><ul><li>Lower storage cost</li></ul></div>
+<div class="col b"><b>عدة مخازن إقليمية</b><ul><li>Faster delivery</li><li>But higher facility + inventory cost</li></ul></div>
+</div>
+<div class="key"><b>الخلاصة:</b> توازن بين التكلفة وسرعة التوصيل.</div>
+<h3>عوامل خدمة العميل (6)</h3>
+<div class="flow"><span class="n">Response time</span><span class="n">Product variety</span><span class="n">Product availability</span><span class="n hot">Order visibility (تتبع الطلب)</span><span class="n">Customer experience</span><span class="n">Returnability</span></div>
+</section>
+<section id="l6" class="lesson-page" role="tabpanel" aria-labelledby="tab-l6" hidden>
+<h2>Barcode Technology</h2>
+<div class="card">الباركود = تمثيل مرئي لمعلومات يقرأه الـ scanner. غالباً بيمثل <b class="en">identification number</b> وليس وصفاً كاملاً للمنتج.</div>
+<h3>إزاي بيشتغل</h3>
+<div class="flow"><span class="n">Barcode</span><span class="a">→</span><span class="n">Scanner</span><span class="a">→</span><span class="n">Database</span><span class="a">→</span><span class="n">Product information</span></div>
+<div class="card">مثال المحاضرة (T-shirt): <span class="en">SKU 123456789012 · Price $15 · Stock 250 units · Location Aisle 3 – Shelf 5</span><br><b class="en">SKU = Stock Keeping Unit</b></div>
+<div class="trap"><b>الخطأ الشائع:</b> إن الباركود مجرد خطوط سودا. قيمته الحقيقية في ربطه بنظام معلومات.</div>
+<h3>مثال الاستلام (100 صندوق)</h3>
+<div class="flow"><span class="n">Scanner reads</span><span class="a">→</span><span class="n">Decoded</span><span class="a">→</span><span class="n">Product identified</span><span class="a">→</span><span class="n">Database searched</span><span class="a">→</span><span class="n">Info retrieved</span><span class="a">→</span><span class="n">Inventory transaction recorded</span></div>
+<div class="key"><b>النتيجة:</b> وصول الصندوق الفعلي بقى <span class="en">digital transaction</span> في النظام.</div>
+<h3>النظام الكامل</h3>
+<div class="card"><span class="en">Barcode + Scanner + Software + Database = Barcode System</span><br>الباركود لوحده ما بيدير المخزن. لازم يتوصل بـ:
+<div class="flow"><span class="n">WMS – Warehouse Management</span><span class="n">ERP – Enterprise Resource Planning</span><span class="n">Inventory Mgmt</span><span class="n">POS – Point of Sale</span><span class="n">Order Mgmt</span></div></div>
+<h3>الـ Ecosystem (6 عناصر)</h3>
+<div class="flow"><span class="n">Label</span><span class="n">Scanner</span><span class="n">Mobile computer (handheld)</span><span class="n">Software</span><span class="n">Database</span><span class="n">Network</span></div>
+<div class="card">الـ Network = يسمح للأجهزة والأنظمة تتبادل المعلومات عند الحاجة.</div>
+<h3>الأنواع</h3>
+<div class="grid">
+<div class="col"><b>1D (linear)</b><ul><li>Lines and spaces</li><li>UPC = Universal Product Code</li></ul></div>
+<div class="col b"><b>2D</b><ul><li>Two-dimensional pattern</li><li>QR Code = Quick Response</li></ul></div>
+</div>
+<div class="key">الاختيار بين الأنواع حسب <span class="en">operational and information requirements</span> للشركة.</div>
+</section>
+      </div>
+    </section>
+
+    <section class="view-panel" id="view-study" data-view-panel="study" aria-labelledby="studyTitle" hidden>
+      <div class="page-heading"><div><p class="eyebrow">تدريب بإجابات فورية</p><h2 id="studyTitle">وضع المذاكرة</h2>
+        <p class="muted">اختر مجموعة، وجاوب سؤالًا سؤالًا. يظهر التصحيح ورابط للمحاضرة عند توفر مرجع في الشرح.</p></div></div>
+      <div class="toolbar card">
+        <label for="studySet">مجموعة الأسئلة</label>
+        <select id="studySet" class="control">
+          <option value="all">كل أسئلة البنك</option>
+          <option value="bank-0">محاضرتا 1 و2</option>
+          <option value="bank-1">محاضرة 3 · Distribution</option>
+          <option value="bank-2">محاضرة 6 · Barcode</option>
+          <option value="quick">اختبر نفسك · الشرح البصري</option>
+          <option value="wrong">الأخطاء المحفوظة</option>
+          <option value="unanswered">الأسئلة غير المحلولة</option>
+        </select>
+        <button type="button" id="startStudy" class="button button-primary">ابدأ المذاكرة</button>
+      </div>
+      <div id="studyRoot" class="stack" aria-live="polite"></div>
+    </section>
+
+    <section class="view-panel" id="view-quiz" data-view-panel="quiz" aria-labelledby="quizTitle" hidden>
+      <div class="page-heading"><div><p class="eyebrow">محاكاة اختبار</p><h2 id="quizTitle">وضع الاختبار</h2>
+        <p class="muted">أجب عن المجموعة كاملة ثم صحّحها. خلط الأسئلة والاختيارات مفعّل افتراضيًا، ويمكن إيقافه.</p></div></div>
+      <form id="quizSetup" class="card quiz-setup">
+        <div class="form-grid">
+          <label for="quizSet">مجموعة الاختبار</label>
+          <select id="quizSet" class="control">
+            <option value="all">كل أسئلة البنك · 100</option>
+            <option value="bank-0">محاضرتا 1 و2 · 50</option>
+            <option value="bank-1">محاضرة 3 · Distribution · 25</option>
+            <option value="bank-2">محاضرة 6 · Barcode · 25</option>
+            <option value="quick">اختبر نفسك · الشرح البصري · 12</option>
+            <option value="wrong">الأخطاء المحفوظة</option>
+            <option value="unanswered">الأسئلة غير المحلولة</option>
+          </select>
+          <label for="timerMinutes">المؤقت</label>
+          <select id="timerMinutes" class="control">
+            <option value="0">بدون مؤقت</option><option value="15">15 دقيقة</option>
+            <option value="30">30 دقيقة</option><option value="45">45 دقيقة</option><option value="60">60 دقيقة</option>
+          </select>
+        </div>
+        <div class="check-row">
+          <label><input id="shuffleQuestions" type="checkbox" checked> خلط ترتيب الأسئلة</label>
+          <label><input id="shuffleOptions" type="checkbox" checked> خلط ترتيب الاختيارات</label>
+        </div>
+        <button class="button button-primary" type="submit">ابدأ الاختبار</button>
+      </form>
+      <div id="quizRoot" class="stack" aria-live="polite"></div>
+    </section>
+
+    <section class="view-panel" id="view-library" data-view-panel="library" aria-labelledby="libraryTitle" hidden>
+      <div class="page-heading"><div><p class="eyebrow">بحث ومراجعة</p><h2 id="libraryTitle">بنك الأسئلة</h2>
+        <p class="muted">ابحث في نص السؤال والاختيارات، ثم صفِّ النتائج حسب المحاضرة وحالة إجابتك.</p></div></div>
+      <div class="card filter-panel">
+        <label class="search-label" for="questionSearch">بحث</label>
+        <input id="questionSearch" class="control" type="search" placeholder="اكتب كلمة أو جزءًا من السؤال" autocomplete="off">
+        <div class="filter-grid">
+          <label for="bankFilter">المحاضرة</label>
+          <select id="bankFilter" class="control">
+            <option value="all">كل المجموعات</option><option value="bank-0">محاضرتا 1 و2</option>
+            <option value="bank-1">محاضرة 3 · Distribution</option><option value="bank-2">محاضرة 6 · Barcode</option>
+            <option value="quick">اختبر نفسك · الشرح البصري</option>
+          </select>
+          <label for="statusFilter">الحالة</label>
+          <select id="statusFilter" class="control">
+            <option value="all">كل الحالات</option><option value="unanswered">لم تُحل</option>
+            <option value="wrong">إجابة خاطئة</option><option value="correct">إجابة صحيحة</option>
+          </select>
+        </div>
+        <p id="searchCount" class="muted result-count" aria-live="polite"></p>
+      </div>
+      <div id="libraryRoot" class="question-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>محتوى المراجعة مبني على الملفين المرفوعين.</span>
+    <div class="footer-tools">
+      <button type="button" id="exportProgress" class="text-button">تصدير التقدم</button>
+      <button type="button" id="importProgress" class="text-button">استيراد التقدم</button>
+      <button type="button" id="resetProgress" class="text-button text-danger">مسح التقدم</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
+
